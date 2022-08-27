@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+    <title>cadastro</title>
+</head>
+<body>
+    <header>
+        <div class="center">
+            <div class="logo"><img src="{% static 'imagens/logo.png' %}" alt=""></div>
+            <div class="menu">
+                <a href="inicio.html">início</a>
+                <a href="kits.html">kits</a>
+                <a href="">cadastro</a>
+                <a href="">conta</a>
+                <button class="button_login">login</button>
+            </div>
+        </div>
+    </header>
+    <br>
+    <h1 class="titulo_centro"> faça seu cadastro </h1>
+    <div class="titulo_centro">
+        <form action="{% url 'cadastro' %}" method="post"> {% csrf_token %}
+            <input type="text" placeholder="username..." name="username" class="input">
+                <br>
+                <br>
+            <input type="email" placeholder="e-mail..." name="email">
+                <br>
+                <br>
+            <input type="password" placeholder="senha" name="senha">
+                <br>
+                <br>
+            <input type="submit" value="cadastrar">
+                <br>
+                <br>
+        </form>
+        <br>
+    </div>
+    
+    <footer class="rodape">
+        <h1 class="contato">contatos:</h1>
+        <div class="container_contato">
+            <img src="{% static 'imagens/favicon-16x16.png' %}" alt="" class="icon">
+            <p class="texto_contato">proj.kitcurso@gmail.com</p>
+        </div>
+    </footer>
+</body>
+</html>
